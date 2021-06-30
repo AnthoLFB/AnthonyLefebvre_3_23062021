@@ -8,6 +8,8 @@
         
         <link rel="stylesheet" href="scripts/reset.css">
         <link rel="stylesheet" href="scripts/style.css">
+
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -16,7 +18,73 @@
         </header> 
 
         <main>
+            <section class="position">
+                <i class="fas fa-map-marker-alt position__gps-logo"></i>
+                <p class="position__city-name"></p>
+            </section>
 
+            <section class="search">
+                <h1 class="search__title">Réservez le menu qui vous convient</h1>
+                <p class="search__catchphrase">Découvrez des restaurants d'exception, séléctionnés par nos soins</p>
+                <a class="search__button" href="#">Explorer nos restaurants</a>
+            </section>
+
+            <section class="functionning">
+                <h1 class="functionning__title">Fonctionnement</h1>
+                <ul class="functionning__step-list">
+                    <li class="functionning__step-list__item">
+                        <p class="functionning__step-list__item__step-number">1</p>
+                        <i class="fas fa-mobile-alt functionning__step-list__item__icon"></i>    
+                        <p class="functionning__step-list__item__description">Choisissez un restaurant</p>
+                    </li>
+                    
+                    <li class="functionning__step-list__item">
+                        <p class="functionning__step-list__item__step-number">2</p>
+                        <i class="fas fa-list-ul functionning__step-list__item__icon"></i>
+                        <p class="functionning__step-list__item__description">Composez votre menu</p>
+                    </li>
+                    
+                    <li class="functionning__step-list__item">
+                        <p class="functionning__step-list__item__step-number">3</p>
+                        <i class="fas fa-store functionning__step-list__item__icon"></i>
+                        <p class="functionning__step-list__item__description">Dégustez au restaurant</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="restaurants">
+                <h1 class="restaurants__title"></h1>
+                
+                <article class="restaurants__preview">
+                    <img class="restaurants__preview__image" src="images/Accueil/Restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Image - La palette du goût">
+                    <p class="restaurants__preview__popup">Nouveau</p>
+                    <h2 class="restaurants__preview__name">La palette du goût</h2>
+                    <p class="restaurants__preview__localisation">Ménilmontant</p>
+                    <i class="far fa-heart restaurants__preview__heart-logo"></i>
+                </article>
+
+                <article class="restaurants__preview">
+                    <img class="restaurants__preview__image" src="images/Accueil/Restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image - La note enchantée">
+                    <p class="restaurants__preview__popup">Nouveau</p>
+                    <h2 class="restaurants__preview__name">La note enchantée</h2>
+                    <p class="restaurants__preview__localisation">Charonne</p>
+                    <i class="far fa-heart restaurants__preview__heart-logo"></i>
+                </article>
+
+                <article class="restaurants__preview">
+                    <img class="restaurants__preview__image" src="images/Accueil/Restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image - À la française">
+                    <h2 class="restaurants__preview__name">À la française</h2>
+                    <p class="restaurants__preview__localisation">Cité Rouge</p>
+                    <i class="far fa-heart restaurants__preview__heart-logo"></i>
+                </article>
+
+                <article class="restaurants__preview">
+                    <img class="restaurants__preview__image" src="images/Accueil/Restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image - Le délice des sens">
+                    <h2 class="restaurants__preview__name">Le délice des sens</h2>
+                    <p class="restaurants__preview__localisation">Folie-Méricourt</p>
+                    <i class="far fa-heart restaurants__preview__heart-logo"></i>
+                </article>
+            </section>
         </main>
     </body>
 </html>
