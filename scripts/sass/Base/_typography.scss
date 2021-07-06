@@ -1,0 +1,36 @@
+/*--- Définition des polices utilisées pour le site ---*/
+@font-face 
+{
+    font-family: 'Shrikland';
+    src: url('../../font/Shrikhand-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'Roboto';
+    src: url('../../font/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'RobotoBold';
+    src: url('../../font/Roboto-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body
+{
+    font-size: 1em;
+    font-family: "Roboto";
+}
+
+h1
+{
+    font-size: 1.25em;
+    font-family: "RobotoBold", sans-serif;
+}

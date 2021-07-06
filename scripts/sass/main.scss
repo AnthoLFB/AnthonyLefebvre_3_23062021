@@ -6,18 +6,16 @@
 /* Import des fondations du site */
 /* Reset CSS */
 @import "./Base/reset";
-/*@import "./base/typography";
+@import "./Base/typography";
 
-@import "./components/buttons";*/
+/* Import des composants */
+/* Style des boutons (liens) */
+@import "./Components/linksButtons";
 
 /*Blocs réutilisables*/
 /* Import du header */
 @import "./Layouts/header";
-/*
-@import "./layouts/nav";
-@import "./layouts/container";
-@import "./layouts/form";
+@import "./Layouts/sections";
 
-@import "./pages/work";
-@import "./pages/about";
-@import "./pages/project";*/
+/* Import des pages */
+@import "./Pages/accueil";

@@ -1,0 +1,9 @@
+section
+{
+    width: calc(100% - 3em);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1.5em;
+    background-color: $section-bg-color;
+}
