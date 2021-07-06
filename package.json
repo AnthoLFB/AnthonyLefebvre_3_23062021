@@ -1,0 +1,20 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet 3 - Formation OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./scripts/sass/main.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthoLFB/AnthonyLefebvre_3_23062021.git"
+  },
+  "author": "Anthony LEFEBVRE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthoLFB/AnthonyLefebvre_3_23062021/issues"
+  },
+  "homepage": "https://github.com/AnthoLFB/AnthonyLefebvre_3_23062021#readme"
+}
