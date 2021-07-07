@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* Import des variables, fonctions, et mixins */
+/* Couleurs du site */
 /* Import des fondations du site */
 /* Reset CSS */
 /* --- RESET CSS --- */
@@ -370,9 +371,45 @@ textarea {
 }
 
 /* --- END OF RESET CSS --- */
-/*@import "./base/typography";
+/*--- Définition des polices utilisées pour le site ---*/
+@font-face {
+  font-family: "Shrikland";
+  src: url("../../font/Shrikhand-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../font/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../../font/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  font-size: 1em;
+  font-family: "Roboto";
+}
 
-@import "./components/buttons";*/
+h1 {
+  font-size: 1.25em;
+  font-family: "RobotoBold", sans-serif;
+}
+
+/* Import des composants */
+/* Style des boutons (liens) */
+a {
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 2em;
+}
+
 /*Blocs réutilisables*/
 /* Import du header */
 header {
@@ -381,20 +418,72 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 1px 5px #D3D3D3;
 }
 header__img {
   margin-top: 1em;
   width: 50%;
 }
 
-/*
-@import "./layouts/nav";
-@import "./layouts/container";
-@import "./layouts/form";
+section {
+  width: calc(100% - 3em);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5em;
+  background-color: #F6F6F6;
+}
 
-@import "./pages/work";
-@import "./pages/about";
-@import "./pages/project";*/
+article {
+  width: 100%;
+  border-radius: 1em;
+  background-color: #FFFFFF;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+/* Import des pages */
+article img {
+  width: 100%;
+}
+
+.position {
+  justify-content: center;
+  box-shadow: inset 0 7px 9px -7px #b4b4b4;
+}
+.position__gps-logo {
+  margin-right: 0.5em;
+}
+.position__city-name {
+  font-family: "RobotoBold", sans-serif;
+}
+.position--darken-bg {
+  background-color: #EAEAEA;
+}
+
+.search__title {
+  margin: 1em;
+  text-align: center;
+}
+.search__catchphrase {
+  text-align: center;
+  margin: 1em 0;
+}
+.search__button {
+  margin: 2em auto;
+}
+
+.functionning--bg-white {
+  background-color: #FFFFFF;
+}
+
+.restaurants__title {
+  margin: 1em 0 1em 0;
+}
+.restaurants__preview__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
 
 /*# sourceMappingURL=style.css.map */
