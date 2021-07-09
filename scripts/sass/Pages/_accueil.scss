@@ -44,27 +44,63 @@ article img{width:100%;}
 
 .functionning
 {
+    margin-bottom: 2em;
+    
+    &__step-list
+    {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        &__item
+        {
+            width: calc(100% - 4em);
+            display: flex;
+            flex-direction: row;
+            background-color: $section-bg-color;
+            margin: 1em 0 1em 0;
+            padding: 2em;
+            border-radius: 1em;
+            @include boxShadow;
+
+            &__step-number
+            {
+                position: absolute;
+                left: -10px;
+                background-color: $primary-color;
+                color: #FFFFFF;
+                border-radius: 4em;
+                padding: 5px 8px 3px 8px; 
+            }
+
+            &__icon
+            {
+                padding-right: 1.5em;
+                font-size: 1.25em;
+                color: $iconsColor;
+
+                &--purple
+                {
+                    color: $primary-color;
+                }
+            }
+
+            &__description
+            {
+                @include fontStyleBold;
+            }
+
+            &--light-purple
+            {
+                background-color: lighten($primary-color, 35%);
+            }
+        }
+    }
+
     &--bg-white
     {
         background-color: #FFFFFF;
-    }
-}
-
-.restaurants
-{
-    &__title
-    {
-        margin: 1em 0 1em 0;
-    }
-
-    &__preview
-    {
-        &__image
-        {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 1em;
-        }
     }
 }

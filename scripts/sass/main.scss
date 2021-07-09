@@ -1,22 +1,30 @@
-/* Import des variables, fonctions, et mixins */
+/* --- Import des variables, fonctions, et mixins --- */
 @import "./Utils/variables";
 @import "./Utils/functions";
 @import "./Utils/mixins";
 
-/* Import des fondations du site */
+/* --- Import des fondations du site --- */
 /* Reset CSS */
 @import "./Base/reset";
+
+/* Import des style d'écriture pour le site */
 @import "./Base/typography";
 
-/* Import des composants */
+/* --- Import des composants --- */
+/* Style de base des sections */
+@import "./Components/sections";
+
 /* Style des boutons (liens) */
 @import "./Components/linksButtons";
 
-/*Blocs réutilisables*/
+/* Style des articles restaurants */
+@import "./Components/restaurants";
+
+/*  --- Blocs réutilisables --- */
 /* Import du header */
 @import "./Layouts/header";
-@import "./Layouts/sections";
-@import "./Layouts/articles";
 
-/* Import des pages */
+
+/* --- Import des pages --- */
+/* Page d'accueil */
 @import "./Pages/accueil";

@@ -1,0 +1,11 @@
+/* Permet de mettre en gras les elements */
+@mixin fontStyleBold
+{
+    font-family: "RobotoBold", sans-serif;
+}
+
+/* Affichage de l'ombre sur les elements */
+@mixin boxShadow 
+{
+    box-shadow: 2px 5px 10px #dbdbdb;
+}

@@ -1,7 +1,9 @@
 @charset "UTF-8";
-/* Import des variables, fonctions, et mixins */
+/* --- Import des variables, fonctions, et mixins --- */
 /* Couleurs du site */
-/* Import des fondations du site */
+/* Permet de mettre en gras les elements */
+/* Affichage de l'ombre sur les elements */
+/* --- Import des fondations du site --- */
 /* Reset CSS */
 /* --- RESET CSS --- */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -371,6 +373,7 @@ textarea {
 }
 
 /* --- END OF RESET CSS --- */
+/* Import des style d'écriture pour le site */
 /*--- Définition des polices utilisées pour le site ---*/
 @font-face {
   font-family: "Shrikland";
@@ -398,19 +401,61 @@ body {
 h1 {
   font-size: 1.25em;
   font-family: "RobotoBold", sans-serif;
+  margin: 1em 0 1em 0;
 }
 
-/* Import des composants */
+/* --- Import des composants --- */
+/* Style de base des sections */
+section {
+  width: calc(100% - 3em);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5em;
+  background-color: #F6F6F6;
+}
+
 /* Style des boutons (liens) */
 a {
-  background-image: linear-gradient(#9356DC, #FF79DA);
+  background-image: linear-gradient(#FF79DA, #9356DC);
   color: #FFFFFF;
   text-decoration: none;
   padding: 1em;
   border-radius: 2em;
 }
 
-/*Blocs réutilisables*/
+/* Style des articles restaurants */
+.restaurants__preview {
+  position: relative;
+  width: 100%;
+  border-radius: 1em;
+  background-color: #FFFFFF;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.restaurants__preview__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+.restaurants__preview__name {
+  font-family: "RobotoBold", sans-serif;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+.restaurants__preview__localisation {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.restaurants__preview__heart-logo {
+  position: absolute;
+  right: 25px;
+  top: 200px;
+  margin-top: 1em;
+}
+
+/*  --- Blocs réutilisables --- */
 /* Import du header */
 header {
   width: 100%;
@@ -424,24 +469,8 @@ header__img {
   width: 50%;
 }
 
-section {
-  width: calc(100% - 3em);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 1.5em;
-  background-color: #F6F6F6;
-}
-
-article {
-  width: 100%;
-  border-radius: 1em;
-  background-color: #FFFFFF;
-  margin-bottom: 1em;
-  overflow: hidden;
-}
-
-/* Import des pages */
+/* --- Import des pages --- */
+/* Page d'accueil */
 article img {
   width: 100%;
 }
@@ -472,18 +501,50 @@ article img {
   margin: 2em auto;
 }
 
+.functionning {
+  margin-bottom: 2em;
+}
+.functionning__step-list {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.functionning__step-list__item {
+  width: calc(100% - 4em);
+  display: flex;
+  flex-direction: row;
+  background-color: #F6F6F6;
+  margin: 1em 0 1em 0;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 2px 5px 10px #dbdbdb;
+}
+.functionning__step-list__item__step-number {
+  position: absolute;
+  left: -10px;
+  background-color: #9356DC;
+  color: #FFFFFF;
+  border-radius: 4em;
+  padding: 5px 8px 3px 8px;
+}
+.functionning__step-list__item__icon {
+  padding-right: 1.5em;
+  font-size: 1.25em;
+  color: #7E7E7E;
+}
+.functionning__step-list__item__icon--purple {
+  color: #9356DC;
+}
+.functionning__step-list__item__description {
+  font-family: "RobotoBold", sans-serif;
+}
+.functionning__step-list__item--light-purple {
+  background-color: #f2eafb;
+}
 .functionning--bg-white {
   background-color: #FFFFFF;
-}
-
-.restaurants__title {
-  margin: 1em 0 1em 0;
-}
-.restaurants__preview__image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
