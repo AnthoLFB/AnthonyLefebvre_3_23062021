@@ -59,5 +59,10 @@
                 line-height: 0.5em;
             }
         }
+
+        &:hover
+        {
+            @include boxShadow(darken($boxShadowColor, 30));
+        }
     }
 }
