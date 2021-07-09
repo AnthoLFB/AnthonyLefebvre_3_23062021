@@ -9,3 +9,8 @@
 {
     box-shadow: 2px 5px 10px $color;
 }
+
+@mixin btnGradient($color1: $secondary-color, $color2: $primary-color) 
+{
+    background-image: linear-gradient($color1, $color2);    
+}
