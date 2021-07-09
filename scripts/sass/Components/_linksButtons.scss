@@ -1,8 +1,14 @@
-a
+.btn
 {
     background-image: linear-gradient($secondary-color, $primary-color);
     color: #FFFFFF;
     text-decoration: none;
     padding: 1em;
     border-radius: 2em;
+    @include boxShadow;
+
+    &:hover
+    {
+        @include boxShadow(darken($boxShadowColor, 50));
+    }
 }
