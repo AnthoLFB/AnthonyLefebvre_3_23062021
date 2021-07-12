@@ -1,0 +1,29 @@
+.footer
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+
+    &__title
+    {
+        font-family: "Shrikland", sans-serif;
+    }
+
+    &__link
+    {
+        text-decoration: none;
+        line-height: 2em;
+
+        &__icon
+        {
+           width: 10px;
+           height: 10px;
+           margin-right: 1em;
+        }
+    }
+
+    &__title, &__link
+    {
+        color: #FFFFFF;
+    }
+}
