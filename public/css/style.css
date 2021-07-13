@@ -490,7 +490,12 @@ header {
   justify-content: center;
   align-items: center;
 }
-header__img {
+header .header__icon {
+  font-size: 1.25em;
+  position: absolute;
+  left: 25px;
+}
+header .header__img {
   margin-top: 1em;
   width: 50%;
 }
