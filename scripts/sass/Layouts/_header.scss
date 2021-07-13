@@ -6,9 +6,20 @@ header
     justify-content: center;
     align-items: center;
 
-    &__img
+    .header
     {
-        margin-top: 1em;
-        width: 50%;
+        &__icon
+        {
+            font-size: 1.25em;
+            position: absolute;   
+            left: 25px;
+        
+        }
+
+        &__img
+        {
+            margin-top: 1em;
+            width: 50%;
+        }
     }
 }
