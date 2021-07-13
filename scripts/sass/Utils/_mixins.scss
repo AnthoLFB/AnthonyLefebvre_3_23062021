@@ -4,6 +4,12 @@
     font-family: "RobotoBold", sans-serif;
 }
 
+/* Permet de mettre en gras les elements */
+@mixin fontTitle
+{
+    font-family: "Shrikland", sans-serif;
+}
+
 /* Affichage de l'ombre sur les elements */
 @mixin boxShadow($color: $boxShadowColor) 
 {

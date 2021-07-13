@@ -3,12 +3,14 @@
 @import "./Utils/functions";
 @import "./Utils/mixins";
 
+
 /* --- Import des fondations du site --- */
 /* Reset CSS */
 @import "./Base/reset";
 
 /* Import des style d'écriture pour le site */
 @import "./Base/typography";
+
 
 /* --- Import des composants --- */
 /* Style de base des sections */
@@ -19,6 +21,13 @@
 
 /* Style des articles restaurants */
 @import "./Components/restaurants";
+
+/* Style de l'illustration Page Menu */
+@import "./Components/illustrations";
+
+/* Style de la section Menu */
+@import "./Components/menus";
+
 
 /*  --- Blocs réutilisables --- */
 /* Import du header */
@@ -31,3 +40,6 @@
 /* --- Import des pages --- */
 /* Page d'accueil */
 @import "./Pages/accueil";
+
+/* Page du menu (palette du gout) */
+@import "./Pages/laPaletteDuGout";
