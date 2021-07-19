@@ -23,16 +23,12 @@ article img{width:100%;}
 
 .search
 {
-    &__title
+    
+    &__title,  &__catchphrase
     {
+        width: 100%;
         margin: 1em;
         text-align: center;
-    }
-
-    &__catchphrase
-    {
-        text-align: center;
-        margin: 1em 0;
     }
 
     &__button
