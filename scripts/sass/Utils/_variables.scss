@@ -8,3 +8,13 @@ $section-darken-bg-color: #EAEAEA;
 $iconsColor: #7E7E7E;
 $boxShadowColor: #dbdbdb;
 
+/* Map pour le responsive */
+$responsive-breakpoints: 
+(
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px,
+  xxlarge: 1400px,
+  ultrawide: 2560px
+);

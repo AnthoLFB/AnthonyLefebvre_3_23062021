@@ -16,7 +16,64 @@
     box-shadow: 2px 5px 10px $color;
 }
 
+/* Gère le gradient du bouton en fonction des couleurs du site*/
 @mixin btnGradient($color1: $secondary-color, $color2: $primary-color) 
 {
     background-image: linear-gradient($color1, $color2);    
+}
+
+/*---- Responsive ----*/
+
+/* Ecran de taille supérieur a 576px */
+@mixin smallScreen 
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, small))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 768px */
+@mixin mediumScreen 
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, medium))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 992px */
+@mixin largeScreen
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, large))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 1200px */
+@mixin xlargeScreen
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, xlarge))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 1400px */
+@mixin xxlargeScreen
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, xxlarge))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 2560px */
+@mixin ultraWideScreen
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, ultrawide))
+    {
+        @content;
+    }
 }

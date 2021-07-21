@@ -6,4 +6,9 @@ section
     flex-wrap: wrap;
     padding: 1.5em;
     background-color: $section-bg-color;
+
+    h1
+    {
+        width: 100%;
+    }
 }

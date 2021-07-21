@@ -1,9 +1,18 @@
 @charset "UTF-8";
 /* --- Import des variables, fonctions, et mixins --- */
 /* Couleurs du site */
+/* Map pour le responsive */
 /* Permet de mettre en gras les elements */
 /* Permet de mettre en gras les elements */
 /* Affichage de l'ombre sur les elements */
+/* Gère le gradient du bouton en fonction des couleurs du site*/
+/*---- Responsive ----*/
+/* Ecran de taille supérieur a 576px */
+/* Ecran de taille supérieur a 768px */
+/* Ecran de taille supérieur a 992px */
+/* Ecran de taille supérieur a 1200px */
+/* Ecran de taille supérieur a 1400px */
+/* Ecran de taille supérieur a 2560px */
 /* --- Import des fondations du site --- */
 /* Reset CSS */
 /* --- RESET CSS --- */
@@ -415,6 +424,9 @@ section {
   padding: 1.5em;
   background-color: #F6F6F6;
 }
+section h1 {
+  width: 100%;
+}
 
 /* Style des boutons (liens) */
 .btn {
@@ -439,6 +451,20 @@ section {
   margin-bottom: 1em;
   overflow: hidden;
   box-shadow: 2px 5px 10px #dbdbdb;
+  /*Responsive*/
+  /*Responsive*/
+}
+@media screen and (min-width: 768px) {
+  .restaurants__preview {
+    width: calc(50% - 2em);
+    margin: 1em;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .restaurants__preview {
+    width: calc(25% - 2em);
+    margin: 1em;
+  }
 }
 .restaurants__preview__link {
   text-decoration: none;
@@ -491,12 +517,19 @@ section {
 .illustration__image {
   width: 100%;
 }
+@media screen and (min-width: 992px) {
+  .illustration__image {
+    height: 350px;
+    object-fit: cover;
+  }
+}
 
 /* Style de la section Menu */
 .menu {
   padding-top: 0.5em;
   position: relative;
   top: -45px;
+  margin-bottom: -45px;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
 }
@@ -534,6 +567,12 @@ section {
   border-radius: 1em;
   box-shadow: 2px 5px 10px #dbdbdb;
 }
+@media screen and (min-width: 992px) {
+  .menu__proposition {
+    width: calc(33% - 4em);
+    margin: 1em;
+  }
+}
 .menu__proposition__title, .menu__proposition__more__price {
   font-family: "RobotoBold", sans-serif;
 }
@@ -555,10 +594,16 @@ section {
   text-align: center;
   width: 40%;
 }
+@media screen and (min-width: 992px) {
+  .menu__btn {
+    width: 15%;
+  }
+}
 
 /*  --- Blocs réutilisables --- */
 /* Import du header */
 header {
+  position: relative;
   width: 100%;
   height: 75px;
   display: flex;
@@ -580,13 +625,56 @@ header .header__img {
   display: flex;
   flex-direction: column;
   background-color: #353535;
+  /*Responsive*/
+  /*Responsive*/
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .footer {
+    justify-content: center;
+  }
 }
 .footer__title {
   font-family: "Shrikland", sans-serif;
+  /*Responsive*/
+}
+@media screen and (min-width: 768px) {
+  .footer__title {
+    text-align: center;
+  }
 }
 .footer__link {
   text-decoration: none;
   line-height: 2em;
+  /*Responsive*/
+  /* Responsive */
+  /*Responsive*/
+}
+@media screen and (min-width: 768px) {
+  .footer__link {
+    width: calc(50% - 2em);
+    margin: 1em;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__link {
+    width: calc(25% - 2em);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .footer__link {
+    width: calc(20% - 2em);
+  }
+}
+@media screen and (min-width: 2560px) {
+  .footer__link {
+    width: calc(15% - 2em);
+  }
 }
 .footer__link__icon {
   width: 10px;
@@ -599,8 +687,11 @@ header .header__img {
 
 /* --- Import des pages --- */
 /* Page d'accueil */
-article img {
-  width: 100%;
+@media screen and (min-width: 2560px) {
+  body {
+    width: 2560px;
+    margin: 0 auto;
+  }
 }
 
 .position {
@@ -617,13 +708,10 @@ article img {
   background-color: #EAEAEA;
 }
 
-.search__title {
+.search__title, .search__catchphrase {
+  width: 100%;
   margin: 1em;
   text-align: center;
-}
-.search__catchphrase {
-  text-align: center;
-  margin: 1em 0;
 }
 .search__button {
   margin: 2em auto;
@@ -631,6 +719,24 @@ article img {
 
 .functionning {
   margin-bottom: 2em;
+  /*Responsive*/
+}
+.functionning__title {
+  /*Responsive*/
+}
+@media screen and (min-width: 1400px) {
+  .functionning__title {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .functionning {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 }
 .functionning__step-list {
   position: relative;
@@ -638,8 +744,21 @@ article img {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
+  /* Responsive */
+  /*Responsive*/
+}
+@media screen and (min-width: 992px) {
+  .functionning__step-list {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .functionning__step-list {
+    width: 1400px;
+  }
 }
 .functionning__step-list__item {
+  position: relative;
   width: calc(100% - 4em);
   display: flex;
   flex-direction: row;
@@ -648,6 +767,20 @@ article img {
   padding: 2em;
   border-radius: 1em;
   box-shadow: 2px 5px 10px #dbdbdb;
+  /* Responsive */
+  /* Responsive */
+}
+@media screen and (min-width: 576px) {
+  .functionning__step-list__item {
+    margin: 1em auto;
+    width: 516px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .functionning__step-list__item {
+    width: calc(30% - 2em);
+    margin: 0 1em;
+  }
 }
 .functionning__step-list__item__step-number {
   position: absolute;
@@ -675,6 +808,13 @@ article img {
   background-color: #FFFFFF;
 }
 
-/* Page du menu (palette du gout) */
+/* Page d'accueil */
+@media screen and (min-width: 1200px) {
+  .menu-body {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

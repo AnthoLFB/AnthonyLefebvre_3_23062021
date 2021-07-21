@@ -10,6 +10,20 @@
         overflow: hidden;
         @include boxShadow;
 
+        /*Responsive*/
+        @include mediumScreen
+        {
+            width: calc(50% - 2em);
+            margin: 1em;
+        }
+
+        /*Responsive*/
+        @include xxlargeScreen
+        {
+            width: calc(25% - 2em);
+            margin: 1em;
+        }
+
         &__link
         {
             text-decoration: none;
