@@ -6,7 +6,6 @@
     margin-bottom: -45px;
     border-top-left-radius: 2em;
     border-top-right-radius: 2em;
-
     &__position-title
     {
         margin: 0 0.5em;
@@ -59,8 +58,6 @@
                 transition: transform 0ms 135ms;
             }
         }
-
-        /*HERE*/
     }
 
     &__part-name
@@ -88,7 +85,28 @@
         margin: 0.5em 0;
         padding: 1em;
         border-radius: 1em;
-        @include boxShadow;
+        @include boxShadow; 
+
+        /* animation */
+        @keyframes fadeIn 
+        { 
+            from { opacity:0; } 
+            to { opacity:1; } 
+        }
+
+        opacity:0;
+    
+        @for $i from 1 through $elements
+        {
+            &:nth-child(#{$i}) 
+            {
+                animation: fadeIn ease-in;
+                animation-fill-mode: forwards;
+                animation-duration:1s; 
+                animation-delay: ($i*200ms);
+            }
+        }
+        
 
         @include largeScreen
         {
@@ -131,3 +149,38 @@
         }
     }
 }
+
+/*.menu > article
+{
+    @keyframes fadeIn 
+    { 
+        from { opacity:0; } 
+        to { opacity:1; } 
+    }
+
+    opacity:0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:1s; 
+    
+}
+
+.menu > article
+{
+    -webkit-animation-delay: 200ms;
+    -moz-animation-delay: 200ms;
+    animation-delay: 200ms;
+    &+article
+    {
+        -webkit-animation-delay: 400ms;
+        -moz-animation-delay: 400ms;
+        animation-delay: 400ms;
+        
+        &+article
+        {
+            -webkit-animation-delay: 600ms;
+            -moz-animation-delay: 600ms;
+            animation-delay: 600ms;
+        }
+    }
+}*/

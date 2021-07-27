@@ -2,6 +2,7 @@
 /* --- Import des variables, fonctions, et mixins --- */
 /* Couleurs du site */
 /* Map pour le responsive */
+/* Nombre d'éléments sur la pag menu */
 /* Permet de mettre en gras les elements */
 /* Permet de mettre en gras les elements */
 /* Affichage de l'ombre sur les elements */
@@ -565,7 +566,6 @@ section h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /*HERE*/
 }
 .menu__position-title__restaurant-name, .menu__position-title__heart-logo {
   font-size: 1.5em;
@@ -618,6 +618,136 @@ section h1 {
   padding: 1em;
   border-radius: 1em;
   box-shadow: 2px 5px 10px #dbdbdb;
+  /* animation */
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.menu__proposition:nth-child(1) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 200ms;
+}
+.menu__proposition:nth-child(2) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 400ms;
+}
+.menu__proposition:nth-child(3) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 600ms;
+}
+.menu__proposition:nth-child(4) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 800ms;
+}
+.menu__proposition:nth-child(5) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1000ms;
+}
+.menu__proposition:nth-child(6) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1200ms;
+}
+.menu__proposition:nth-child(7) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1400ms;
+}
+.menu__proposition:nth-child(8) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1600ms;
+}
+.menu__proposition:nth-child(9) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1800ms;
+}
+.menu__proposition:nth-child(10) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 2000ms;
+}
+.menu__proposition:nth-child(11) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 2200ms;
+}
+.menu__proposition:nth-child(12) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 2400ms;
+}
+.menu__proposition:nth-child(13) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 2600ms;
+}
+.menu__proposition:nth-child(14) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 2800ms;
+}
+.menu__proposition:nth-child(15) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 3000ms;
+}
+.menu__proposition:nth-child(16) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 3200ms;
+}
+.menu__proposition:nth-child(17) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 3400ms;
+}
+.menu__proposition:nth-child(18) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 3600ms;
+}
+.menu__proposition:nth-child(19) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 3800ms;
+}
+.menu__proposition:nth-child(20) {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 4000ms;
 }
 @media screen and (min-width: 992px) {
   .menu__proposition {
@@ -652,6 +782,40 @@ section h1 {
   }
 }
 
+/*.menu > article
+{
+    @keyframes fadeIn 
+    { 
+        from { opacity:0; } 
+        to { opacity:1; } 
+    }
+
+    opacity:0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:1s; 
+
+}
+
+.menu > article
+{
+    -webkit-animation-delay: 200ms;
+    -moz-animation-delay: 200ms;
+    animation-delay: 200ms;
+    &+article
+    {
+        -webkit-animation-delay: 400ms;
+        -moz-animation-delay: 400ms;
+        animation-delay: 400ms;
+
+        &+article
+        {
+            -webkit-animation-delay: 600ms;
+            -moz-animation-delay: 600ms;
+            animation-delay: 600ms;
+        }
+    }
+}*/
 /*  --- Blocs réutilisables --- */
 /* Import du header */
 header {
