@@ -78,16 +78,27 @@
         }
     }
 
+    /* Les articles avec les différents plats */
+
+    &__proposition, &__proposition__text__position
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
     &__proposition
     {
-        width: calc(100% - 2em);
+        align-items: center;
+        position: relative;
+        width: calc(100% - 1em);
         background-color: #FFFFFF;
         margin: 0.5em 0;
-        padding: 1em;
+        padding: 1em 0 1em 1em;
         border-radius: 1em;
-        @include boxShadow; 
+        overflow: hidden;
+        @include boxShadow;
 
-        /* animation */
+        /* Animation */
         @keyframes fadeIn 
         { 
             from { opacity:0; } 
@@ -106,35 +117,76 @@
                 animation-delay: ($i*200ms);
             }
         }
-        
 
+        /* Responsive */
         @include largeScreen
         {
             width: calc(33% - 4em);
             margin: 1em;
         }
 
-        &__title, &__more__price
+        &:hover
         {
-            @include fontStyleBold;
-        }
-
-        &__more
-        {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-top: 0.5em;
-
-            &__details
+            .menu__proposition__text
             {
                 width: 80%;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis; 
+                transition: width 800ms;
+            }
+
+            .menu__animation
+            {
+                transform: translateX(-100%);
+                transition: transform 800ms;
+                
+            }
+
+            .menu__animation__icon
+            {
+                transform: rotate(1turn);
+                transition: transform 800ms;
             }
         }
+        
+        &__text
+        {
+            width: 100%;
+
+            &__title, &__position__price
+            {
+                @include fontStyleBold;
+            }
+
+            &__position
+            {
+                justify-content: space-between;
+
+                &__details
+                {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                &__details, &__price
+                {
+                    margin-top: 0.5em;
+                    margin-right: 0.8em;
+                }
+            }
+        }
+    }
+
+    &__animation
+    {
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        right: -20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        background-color: $tertiary-color;
     }
 
     &__btn
@@ -149,38 +201,3 @@
         }
     }
 }
-
-/*.menu > article
-{
-    @keyframes fadeIn 
-    { 
-        from { opacity:0; } 
-        to { opacity:1; } 
-    }
-
-    opacity:0;
-    animation: fadeIn ease-in 1;
-    animation-fill-mode:forwards;
-    animation-duration:1s; 
-    
-}
-
-.menu > article
-{
-    -webkit-animation-delay: 200ms;
-    -moz-animation-delay: 200ms;
-    animation-delay: 200ms;
-    &+article
-    {
-        -webkit-animation-delay: 400ms;
-        -moz-animation-delay: 400ms;
-        animation-delay: 400ms;
-        
-        &+article
-        {
-            -webkit-animation-delay: 600ms;
-            -moz-animation-delay: 600ms;
-            animation-delay: 600ms;
-        }
-    }
-}*/
