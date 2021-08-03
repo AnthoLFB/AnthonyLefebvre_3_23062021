@@ -2,7 +2,18 @@
 /* --- Import des variables, fonctions, et mixins --- */
 /* Couleurs du site */
 /* Map pour le responsive */
-/* Nombre d'éléments sur la pag menu */
+/* Nombre d'éléments sur la page menu */
+/* Nombre de lettres du loader */
+/*--- Animations ---*/
+/* Apparition du loader */
+/* Apparition du loader */
+/* Map pour l'animation des traits */
+/* Map pour l'animation des lettres */
+/* Map pour le changement des lettres*/
+/* Map pour l'animation de chute pour les lettres*/
+/* Map pour l'assiette*/
+/* Map pour la rotation de l'assiette*/
+/* Map pour les couverts*/
 /* Permet de mettre en gras les elements */
 /* Permet de mettre en gras les elements */
 /* Affichage de l'ombre sur les elements */
@@ -14,6 +25,16 @@
 /* Ecran de taille supérieur a 1200px */
 /* Ecran de taille supérieur a 1400px */
 /* Ecran de taille supérieur a 2560px */
+/* Animations */
+/* Apparition du loader */
+/* disparition du loader */
+/* Aller retour bar du loader */
+/* Effet de chute depuis le ciel sur les lettres du loader */
+/* Effet de chute dans le sol sur les lettres du loader */
+/* Changement de couleurs des lettres */
+/* Apparition de l'assiette et des couverts sur le loader  */
+/* Disparition de l'assiette et des couverts sur le loader  */
+/* Rotation de l'assiette */
 /* --- Import des fondations du site --- */
 /* Reset CSS */
 /* --- RESET CSS --- */
@@ -814,6 +835,260 @@ section h1 {
   .menu__btn {
     width: 15%;
   }
+}
+
+/* Style du loader */
+.loader, .loader__container, .loader__container__below, .loader__container__lettre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  opacity: 0;
+  animation: appearingOn ease-in-out, disappearFrom ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 500ms, 500ms;
+  animation-delay: 0ms, 5500ms;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgba(60, 60, 60, 0.75);
+  color: #FFFFFF;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}
+@keyframes appearingOn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappearFrom {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+.loader__container {
+  position: relative;
+  width: 80%;
+  height: 100px;
+  overflow: hidden;
+  font-size: 2em;
+  justify-content: space-around;
+  /* Responsive */
+}
+@keyframes roundTrip {
+  0% {
+    transform: scaleX(0);
+  }
+  32% {
+    transform: scaleX(1);
+  }
+  64% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .loader__container {
+    width: 1000px;
+    font-size: 3.5em;
+  }
+}
+.loader__container::before, .loader__container::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #99E2D0;
+  position: absolute;
+}
+.loader__container::before {
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  animation: roundTrip 2000ms 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+.loader__container::after {
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: 100%;
+  animation: roundTrip 2000ms 3500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+.loader__container__lettre {
+  transform: translateY(-200%);
+  font-family: "Shrikland", sans-serif;
+}
+@keyframes fromSky {
+  0% {
+    transform: translateY(-200%);
+  }
+  25% {
+    transform: translateY(0%) scaleY(0.7);
+  }
+  50% {
+    transform: translateY(-50%) scaleY(1.2);
+  }
+  75% {
+    transform: translateY(10%) scaleY(0.9);
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+  }
+}
+@keyframes fallDown {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(2%) scaleY(0.75);
+  }
+  50% {
+    transform: translateY(-25%) scaleY(1);
+  }
+  75% {
+    transform: translateY(200%) scaleY(1.2);
+  }
+  100% {
+    transform: translateY(210%) scaleY(1);
+  }
+}
+@keyframes colorChange {
+  0% {
+    color: #FFFFFF;
+  }
+  25% {
+    color: #9356DC;
+  }
+  50% {
+    color: #FF79DA;
+  }
+  75% {
+    color: #99E2D0;
+  }
+  100% {
+    color: #FFFFFF;
+  }
+}
+.loader__container__lettre:nth-child(1) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 900ms, 1700ms, 4100ms;
+}
+.loader__container__lettre:nth-child(2) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1000ms, 1800ms, 4200ms;
+}
+.loader__container__lettre:nth-child(3) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1100ms, 1900ms, 4300ms;
+}
+.loader__container__lettre:nth-child(4) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1200ms, 2000ms, 4400ms;
+}
+.loader__container__lettre:nth-child(5) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1300ms, 2100ms, 4500ms;
+}
+.loader__container__lettre:nth-child(6) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1400ms, 2200ms, 4600ms;
+}
+.loader__container__lettre:nth-child(7) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1500ms, 2300ms, 4700ms;
+}
+.loader__container__lettre:nth-child(8) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1600ms, 2400ms, 4800ms;
+}
+.loader__container__lettre:nth-child(9) {
+  animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 530ms, 2100ms, 530ms;
+  animation-delay: 1700ms, 2500ms, 4900ms;
+}
+.loader__container__below {
+  position: relative;
+  margin-top: 0.5em;
+  width: 100%;
+}
+@keyframes popUp {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(1turn);
+  }
+}
+@keyframes vanish {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.loader__container__below__icon {
+  transform: scale(0);
+  font-size: 35px;
+  width: 50px;
+  height: 50px;
+  margin: 0.5em 0 0 0.3em;
+  animation: popUp ease-in-out, vanish ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 350ms, 350ms;
+  animation-delay: 1600ms, 5000ms;
+}
+.loader__container__below__dish {
+  transform: scale(0);
+  animation: popUp ease-in-out, rotate infinite, vanish ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 350ms, 800ms, 350ms;
+  animation-delay: 1600ms, 1950ms, 5000ms;
 }
 
 /*  --- Blocs réutilisables --- */
