@@ -1,0 +1,135 @@
+.loader, .loader__container,.loader__container__below, .loader__container__lettre
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader
+{
+    @include appearingOnAnimation;
+    @include disappearFromAnimation;
+    opacity: 0;
+
+    animation: appearingOn ease-in-out, disappearFrom ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: map-get($appearingOn-times, duration), map-get($disappearFrom-times, duration);
+    animation-delay: map-get($appearingOn-times, delay), map-get($disappearFrom-times, delay);
+
+
+    flex-direction: column;
+    position: absolute;
+    background-color: $backgroundLoader;
+    color: $colorFontLoader;
+    top:0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+
+    &__container
+    {
+        position: relative;
+        width: 80%;
+        height: 100px;
+        overflow: hidden;
+        font-size: 2em;
+        justify-content: space-around;
+
+        @include roundTripAnimation;
+        
+        /* Responsive */
+        @include xlargeScreen
+        {
+            width: 1000px;
+            font-size: 3.5em;
+        }
+
+        &::before, &::after
+        {
+            content: "";
+            width: 100%;
+            height: 5px;
+            background-color: $tertiary-color;
+            position: absolute;
+        }
+
+        &::before
+        {
+            top: 0;
+            transform: scaleX(0);
+            transform-origin: 0%;
+            animation: roundTrip map-get($roundTrip-times, duration) map-get($roundTrip-times, debut)ease-in-out;
+            animation-fill-mode: forwards;
+        } 
+
+        &::after
+        {
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: 100%;
+            animation: roundTrip map-get($roundTrip-times, duration) (map-get($roundTrip-times, delay) + map-get($roundTrip-times, debut)) ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        &__lettre
+        {
+            transform: translateY(-200%);
+            @include fontTitle;
+            @include fromSkyAnimation;
+            @include fallDownAnimation;
+            @include colorChangeAnimation;
+
+            @for $i from 1 through $nbLettres
+            {
+                &:nth-child(#{$i}) 
+                {
+                    animation: fromSky ease-in-out, colorChange ease-in-out, fallDown ease-in-out;
+                    animation-fill-mode: forwards;
+                    animation-duration: map-get($fromSky-times, duration), map-get($colorChange-times, duration), map-get($fallDown-times, duration);
+                    animation-delay: ($i * map-get($fromSky-times,  intervalle) + map-get($fromSky-times,  delay) + map-get($roundTrip-times, debut)), 
+                                        ($i * map-get($colorChange-times,  intervalle) + map-get($colorChange-times,  delay) + map-get($roundTrip-times, debut)), 
+                                        ($i * map-get($fallDown-times,  intervalle) + map-get($fallDown-times,  delay) + map-get($roundTrip-times, debut));
+                }
+            }
+        }
+
+        &__below
+        {
+            position: relative;
+            margin-top: 0.5em;
+            width: 100%;
+
+            @include popUpAnimation;
+            @include rotateAnimation;
+            @include vanishAnimation;
+
+            &__icon
+            {
+                transform: scale(0);
+                font-size: 35px;
+                width: 50px;
+                height: 50px;
+                margin: 0.5em 0 0 0.3em;
+
+                animation: popUp ease-in-out, vanish ease-in-out;
+                animation-fill-mode: forwards;
+                animation-duration: map-get($popUp-times, duration), map-get($vanish-times, duration);
+                animation-delay: (map-get($popUp-times, delay) + map-get($roundTrip-times, debut)), 
+                                    (map-get($vanish-times, delay) + map-get($roundTrip-times, debut));
+            }
+
+            &__dish
+            {
+                transform: scale(0);
+                animation: popUp ease-in-out, rotate infinite, vanish ease-in-out;
+                animation-fill-mode: forwards;
+                animation-duration: map-get($popUp-times, duration), map-get($rotate-times, duration), map-get($vanish-times, duration);
+                animation-delay: (map-get($popUp-times, delay) + map-get($roundTrip-times, debut)), 
+                                    (map-get($rotate-times, delay) + map-get($roundTrip-times, debut)), 
+                                    (map-get($vanish-times, delay) + map-get($roundTrip-times, debut)); 
+            }
+        }
+    }
+}
